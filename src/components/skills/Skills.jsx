@@ -1,6 +1,6 @@
+import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaGit, FaGithub, FaLinux, FaJava, FaHtml5, FaCss3 } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiTailwindcss, SiNextdotjs } from "react-icons/si";
-import SkillCard from "./SkillCard";
 
 const skills = [
   { name: "ReactJS", icon: <FaReact /> },
@@ -17,22 +17,43 @@ const skills = [
   { name: "CSS3", icon: <FaCss3 /> },
 ];
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+};
+
 export default function Skills() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6">
-      <h2 className="text-3xl font-bold text-black mb-6">Technical Skills</h2>
+      <motion.h2 
+        className="text-3xl font-bold text-black mb-6"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        Technical Skills
+      </motion.h2>
 
-      <div className="grid grid-cols-6 gap-6">
+      <motion.div 
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: { transition: { staggerChildren: 0.1 } }
+        }}
+      >
         {skills.map((skill, index) => (
-          <SkillCard 
+          <motion.div 
             key={index} 
-            className="w-[150px] h-[180px] flex flex-col items-center justify-center transition-all duration-300 transform hover:scale-105 hover:shadow-3xl"
+            variants={itemVariants}
+            whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
+            className="w-[150px] h-[180px] flex flex-col items-center justify-center bg-gray-100 rounded-xl shadow-lg cursor-pointer"
           >
-            <div className="text-3xl text-black">{skill.icon}</div>
+            <div className="text-4xl text-black">{skill.icon}</div>
             <p className="text-sm font-semibold text-black mt-2">{skill.name}</p>
-          </SkillCard>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
