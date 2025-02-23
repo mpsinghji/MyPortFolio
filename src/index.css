@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+body {
+  @apply bg-gradient-to-b from-[#7091e6] to-[#3d52a0];
+}
+
+a {
+  @apply text-white no-underline;
+}
+
+section {
+  @apply h-screen snap-center;
+}
+
