@@ -19,14 +19,14 @@ const items = [
   },
   {
     id: 3,
-    img: "/p3.jpg",
+    img: "/Portfolio.png",
     title: "Real-time Chat Application",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur atque maiores culpa.",
     link: "/",
   },
   {
     id: 4,
-    img: "/p4.jpg",
+    img: "/Portfolio.png",
     title: "Social Media Project",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur atque maiores culpa.",
     link: "/",
@@ -66,12 +66,14 @@ const ListItem = ({ item }) => {
 
   return (
     <div className="pItem" ref={ref}>
+      <h1 className="text-4xl font-bold text-white absolute top-20">Projects</h1>
       <motion.div
         variants={imgVariants}
         animate={isInView ? "animate" : "initial"}
         className="pImg"
+        style={{ boxShadow: "0px 0px 10px 5px #28439b" }}
       >
-        <img src={item.img} alt={item.title} />
+        <img src={item.img} alt={item.title} className="" />
       </motion.div>
       <motion.div
         variants={textVariants}
@@ -110,7 +112,7 @@ const Projects = () => {
   const xTranslate = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, -window.innerWidth * items.length]
+    [0, -window.innerWidth * (items.length)]
   );
 
   return (
@@ -120,6 +122,7 @@ const Projects = () => {
           className="empty"
           style={{ width: window.innerWidth - containerDistance }}
         />
+        <h1 className="text-white text-4xl font-bold absolute left-170 top-20">Projects</h1>
         {items.map((item) => (
           <ListItem item={item} key={item.id} />
         ))}
