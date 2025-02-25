@@ -13,7 +13,8 @@ const Hero = () => {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
-          className="text-4xl md:text-6xl lg:text-8xl font-bold text-[#000] mt-4 md:mt-12 text-center md:text-left"
+          // className="text-4xl md:text-6xl lg:text-8xl font-bold text-[#000] mt-4 md:mt-12 text-center md:text-left"
+          className="text-4xl md:text-6xl lg:text-8xl font-bold text-[#7091e6] mt-4 md:mt-12 text-center md:text-left"
         >
           Hey There,
           <br />
@@ -105,7 +106,7 @@ const Hero = () => {
               initial: { y: -100, opacity: 0 },
               animate: { y: 0, opacity: 1 },
             }}
-            className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 rotate-90 bg-[#dd4c62] text-xs px-2 py-1 rounded-br-lg text-white"
+            className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 rotate-90 bg-gray-400 text-xs px-2 py-1 rounded-br-lg text-white"
           >
             FOLLOW ME
           </motion.div>

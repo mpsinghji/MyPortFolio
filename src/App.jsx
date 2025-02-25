@@ -3,7 +3,7 @@ import LazyLoad from "react-lazyload";
 
 const Hero = lazy(() => import("./components/hero/Hero"));
 const Skills = lazy(() => import("./components/skills/Skills"));
-const Portfolio = lazy(() => import("./components/portfolio/Projects"));
+const Portfolio = lazy(() => import("./components/Projects/Projects"));
 const Contact = lazy(() => import("./components/contact/Contact"));
 
 const LoadingSpinner = () => (

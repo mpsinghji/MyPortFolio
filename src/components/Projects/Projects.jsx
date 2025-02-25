@@ -146,7 +146,7 @@ const Projects = () => {
             cy="80"
             r="70"
             fill="none"
-            stroke="#dd4c62"
+            stroke="#7091e6"
             strokeWidth={20}
             style={{ pathLength: scrollYProgress }}
             transform="rotate(-90 80 80)"

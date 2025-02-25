@@ -18,6 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
   gap: 100px;
 }
 
@@ -58,7 +59,7 @@
 }
 
 .pText button {
-  background-color: pink;
+  background-color: #7091e6;
   padding: 12px;
   border-radius: 10px;
   border: none;
