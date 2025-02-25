@@ -4,16 +4,26 @@ import { Suspense } from "react";
 import Shape from "./Shape";
 import Speech from "./Speech";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import Aurora from "./Aurora";
 
 const Hero = () => {
   return (
     <div className="h-screen overflow-hidden flex flex-col md:flex-row relative">
+      {/* Aurora Background */}
+      <div className="absolute inset-0 z-[-1]">
+        <Aurora
+          colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+        />
+      </div>
+
       <div className="w-full md:w-1/2 h-full flex flex-col justify-between p-4 md:p-12">
         <motion.h1
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
-          // className="text-4xl md:text-6xl lg:text-8xl font-bold text-[#000] mt-4 md:mt-12 text-center md:text-left"
           className="text-4xl md:text-6xl lg:text-8xl font-bold text-[#7091e6] mt-4 md:mt-12 text-center md:text-left"
         >
           Hey There,
@@ -49,11 +59,11 @@ const Hero = () => {
             }}
             className="text-sm md:text-base text-gray-300 my-4 text-center md:text-left"
           >
-            Crafting immersive digital experiences with cutting-edge
-            technologies.
+            Crafting immersive digital experiences with cutting-edge technologies.
           </motion.p>
         </motion.div>
       </div>
+
       <div className="w-full md:w-1/2 h-full flex flex-col items-end justify-between p-4 md:p-12">
         <motion.div
           variants={{
@@ -113,6 +123,7 @@ const Hero = () => {
         </motion.div>
         <Speech />
       </div>
+
       <div className="absolute inset-x-0 bottom-0 h-1/2 flex items-end justify-center z-10">
         <Canvas className="w-full h-full">
           <Suspense fallback={null}>

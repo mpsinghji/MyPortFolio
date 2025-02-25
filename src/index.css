@@ -20,7 +20,56 @@ section {
   @apply h-screen snap-center;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar {@import "tailwindcss";
+
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+  }
+  
+  body {
+    @apply bg-black;
+  }
+  
+  a {
+    @apply text-white no-underline;
+  }
+  
+  section {
+    @apply h-screen;
+    scroll-snap-align: start; /* Ensures each section snaps to the start */
+    scroll-snap-stop: always; /* Ensures strict snap behavior */
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #7091e6;
+    border-radius: 10px; /* Ensures the scrollbar is curved */
+    border: 3px solid transparent;
+    background-clip: padding-box;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2c48a2;
+  }
+  
+  html {
+    scrollbar-color: #7091e6 transparent;
+    scrollbar-width: thin;
+  }
+  
   width: 8px; 
   height: 8px; 
   background: transparent; 
