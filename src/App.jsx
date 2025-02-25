@@ -5,6 +5,7 @@ const Hero = lazy(() => import("./components/hero/Hero"));
 const Skills = lazy(() => import("./components/skills/Skills"));
 const Portfolio = lazy(() => import("./components/Projects/Projects"));
 const Contact = lazy(() => import("./components/contact/Contact"));
+const About = lazy(() => import("./components/about/About"));
 
 const LoadingSpinner = () => (
   <div className="flex justify-center items-center h-screen">
@@ -19,6 +20,13 @@ const App = () => {
         <LazyLoad height="100vh" offset={-100}>
           <section id="home">
             <Hero />
+          </section>
+        </LazyLoad>
+      </Suspense>
+      <Suspense fallback={<LoadingSpinner />}>
+        <LazyLoad height="100vh" offset={-100}>
+          <section id="about">
+            <About />
           </section>
         </LazyLoad>
       </Suspense>
