@@ -19,14 +19,14 @@ const items = [
   },
   {
     id: 3,
-    img: "/Portfolio.png",
+    img: "/RealChat.png",
     title: "Real-time Chat Application",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur atque maiores culpa.",
     link: "/",
   },
   {
     id: 4,
-    img: "/Portfolio.png",
+    img: "/SocialMedia.png",
     title: "Social Media Project",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur atque maiores culpa.",
     link: "/",
@@ -35,6 +35,13 @@ const items = [
     id: 5,
     img: "/Portfolio.png",
     title: "Animated Portfolio Website",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur atque maiores culpa.",
+    link: "/",
+  },
+  {
+    id: 6,
+    img: "/JobPortal.png",
+    title: "Job Portal Website",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur atque maiores culpa.",
     link: "/",
   },
@@ -66,7 +73,9 @@ const ListItem = ({ item }) => {
 
   return (
     <div className="pItem" ref={ref}>
-      <h1 className="text-4xl font-bold text-white absolute top-20">Projects</h1>
+      <h1 className="text-4xl font-bold text-white absolute top-20">
+        Projects
+      </h1>
       <motion.div
         variants={imgVariants}
         animate={isInView ? "animate" : "initial"}
@@ -112,7 +121,7 @@ const Projects = () => {
   const xTranslate = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, -window.innerWidth * (items.length)]
+    [0, -window.innerWidth * items.length]
   );
 
   return (
@@ -122,12 +131,15 @@ const Projects = () => {
           className="empty"
           style={{ width: window.innerWidth - containerDistance }}
         />
-        <h1 className="text-white text-4xl font-bold absolute left-170 top-20">Projects</h1>
+        <h1 className="text-white text-4xl font-bold absolute left-170 top-20">
+          Projects
+        </h1>
         {items.map((item) => (
           <ListItem item={item} key={item.id} />
         ))}
       </motion.div>
 
+      <section />
       <section />
       <section />
       <section />

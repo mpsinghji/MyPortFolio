@@ -46,7 +46,7 @@ const Contact = () => {
       {/* Ballpit Background */}
       <div className="absolute inset-0 -z-10">
         <Ballpit
-          count={200}
+          count={150}
           gravity={2}
           friction={0.8}
           wallBounce={0.95}
