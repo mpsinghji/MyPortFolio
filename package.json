@@ -15,6 +15,7 @@
     "@react-three/fiber": "^8.17.14",
     "@tailwindcss/vite": "^4.0.6",
     "framer-motion": "^12.4.7",
+    "hammerjs": "^2.0.8",
     "ogl": "^1.0.11",
     "postprocessing": "^6.36.7",
     "react": "^18.2.0",

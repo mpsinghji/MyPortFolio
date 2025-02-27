@@ -49,7 +49,7 @@ const Contact = () => {
           count={150}
           gravity={2}
           friction={0.8}
-          wallBounce={0.95}
+          wallBounce={0}
           followCursor={true}
         />
       </div>
