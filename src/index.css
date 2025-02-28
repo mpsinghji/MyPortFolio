@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 html {
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
   overflow-x: hidden;
   scrollbar-width: thin;
