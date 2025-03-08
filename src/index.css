@@ -1,25 +1,28 @@
 @import "tailwindcss";
 
 html {
-  /* scroll-snap-type: y mandatory; */
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-x: hidden;
   scrollbar-width: thin;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  @apply bg-black;
+  @apply bg-black min-h-screen w-full m-0 p-0;
+  overscroll-behavior: none;
 }
-
 
 a {
   @apply text-white no-underline;
 }
 
 section {
-  @apply h-screen snap-center;
-  height: 100vh;
-  scroll-snap-align: center;
+  @apply min-h-screen w-full snap-start p-0 m-0;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -30,13 +33,13 @@ section {
 
 ::-webkit-scrollbar-track {
   background: transparent;
-  /* border-radius: 20px;  */
 }
 
 ::-webkit-scrollbar-thumb {
   background: #7091e6;
   border: 3px solid transparent;
   background-clip: padding-box;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -46,4 +49,11 @@ section {
 html {
   scrollbar-color: #7091e6 transparent;
   scrollbar-width: thin;
+}
+
+/* Performance optimizations */
+* {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
 }

@@ -1,65 +1,267 @@
 .projects {
-  height: 300vh;
   position: relative;
-}
-
-.pList {
-  position: sticky;
-  top: 0;
-  display: flex;
   height: 100vh;
-  width: max-content;
+  background: black;
+  overflow: hidden;
+  width: 100vw;
 }
 
-.pItem {
+.background-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.progress-container {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.progress-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.progress-number {
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.progress-line {
+  width: 3px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 100%;
+  height: 100%;
+  background: #7091e6;
+  transform-origin: top;
+}
+
+.projects-container {
   height: 100vh;
   width: 100vw;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  position: relative;
+  z-index: 2;
+}
+
+.project-section {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
-  background: rgba(0, 0, 0, 0.7);
+  padding: 0 40px;
 }
 
-.pImg {
-  width: 40%;
-  border-radius: 10px;
+.project-content {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin: 0 auto;
+}
+
+.project-text {
+  flex: 1;
+  color: white;
+  max-width: 600px;
+}
+
+.project-number {
+  font-size: 1.5rem;
+  color: #7091e6;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.project-text h2 {
+  font-size: 3.5rem;
+  margin: 0 0 30px 0;
+  font-weight: 700;
+  line-height: 1.2;
+  background: linear-gradient(45deg, #fff, #7091e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.project-image-container {
+  flex: 1;
+  position: relative;
+  max-width: 650px;
+}
+
+.project-image {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0px 0px 10px #28439b;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: perspective(1000px) rotateY(-10deg);
+  transition: transform 0.5s ease;
 }
 
-.pImg img {
+.project-image:hover {
+  transform: perspective(1000px) rotateY(-5deg) translateZ(30px);
+}
+
+.project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.pText {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
+.project-image:hover img {
+  transform: scale(1.05);
+}
+
+.view-project-btn {
+  background: #7091e6;
   color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
-.pText h1 {
-  font-size: 32px;
+.view-project-btn:hover {
+  background: transparent;
+  border-color: #7091e6;
+  transform: translateY(-2px);
 }
 
-.pText button {
-  background-color: #7091e6;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
+.project-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  opacity: 0.7;
 }
 
-.pProgress {
-  position: fixed;
-  width: 80px;
-  height: 80px;
-  left: 10px;
-  bottom: 80%;
+.project-link:hover {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Hide scrollbar but keep functionality */
+.projects-container::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 1200px) {
+  .project-section {
+    padding: 0 30px;
+  }
+
+  .project-text h2 {
+    font-size: 2.8rem;
+  }
+
+  .project-image {
+    height: 350px;
+  }
+}
+
+@media (max-width: 968px) {
+  .project-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .project-links {
+    justify-content: center;
+  }
+
+  .project-image {
+    height: 300px;
+    transform: none;
+  }
+
+  .project-image:hover {
+    transform: translateY(-10px);
+  }
+
+  .progress-container {
+    right: 15px;
+  }
+
+  .project-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .project-text {
+    max-width: 100%;
+  }
+
+  .project-image-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-section {
+    padding: 0 15px;
+  }
+
+  .project-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .progress-container {
+    right: 10px;
+  }
+
+  .progress-numbers {
+    display: none;
+  }
+
+  .progress-line {
+    height: 200px;
+  }
 }

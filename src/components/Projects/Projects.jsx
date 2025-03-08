@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-// import Particles from "./Particles";
+import Particles from "./Particles";
 import "./Projects.css";
 
 const items = [
@@ -13,43 +13,114 @@ const items = [
 ];
 
 const Projects = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const xTranslate = useTransform(scrollYProgress, [0, 1], [0, -window.innerWidth * items.length]);
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
 
   return (
-    <div className="projects" ref={ref}>
-      <motion.div className="pList" style={{ x: xTranslate }}>
-        {items.map((item) => (
-          <div className="pItem" key={item.id}>
-            {/* <Particles /> */}
-            <motion.div className="pImg">
-              <img src={item.img} alt={item.title} />
+    <section className="projects" ref={containerRef}>
+      <div className="background-particles">
+        <Particles
+          particleCount={150}
+          particleSpread={15}
+          speed={0.05}
+          particleColors={["#7091e6", "#28439b", "#ffffff"]}
+          moveParticlesOnHover={true}
+          particleHoverFactor={0.5}
+          alphaParticles={true}
+          particleBaseSize={80}
+          sizeRandomness={0.5}
+          cameraDistance={25}
+        />
+      </div>
+
+      <motion.div className="progress-container">
+        <div className="progress-numbers">
+          {items.map((_, index) => (
+            <motion.div
+              key={index}
+              className="progress-number"
+              style={{
+                color: useTransform(
+                  scrollYProgress,
+                  [index / items.length, (index + 1) / items.length],
+                  ["#666", "#fff"]
+                )
+              }}
+            >
+              {index + 1}
             </motion.div>
-            <motion.div className="pText">
-              <h1>{item.title}</h1>
-              <a href={item.link}><button>View Project</button></a>
+          ))}
+        </div>
+        <div className="progress-line">
+          <motion.div
+            className="progress-fill"
+            style={{
+              scaleY: scrollYProgress
+            }}
+          />
+        </div>
+      </motion.div>
+
+      <div className="projects-container">
+        {items.map((item, index) => (
+          <div className="project-section" key={item.id}>
+            <motion.div
+              className="project-content"
+              initial={{ opacity: 0 }}
+              whileInView={{ 
+                opacity: 1,
+                transition: { duration: 0.8 }
+              }}
+              viewport={{ once: true, margin: "-20%" }}
+            >
+              <div className="project-text">
+                <motion.span 
+                  className="project-number"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  {(index + 1).toString().padStart(2, '0')}
+                </motion.span>
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  {item.title}
+                </motion.h2>
+                <motion.div
+                  className="project-links"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <a href={item.link} className="view-project-btn">
+                    View Project
+                  </a>
+                  <a href={item.link} className="project-link">
+                    Learn More →
+                  </a>
+                </motion.div>
+              </div>
+              <motion.div 
+                className="project-image-container"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+              >
+                <div className="project-image">
+                  <img src={item.img} alt={item.title} loading="lazy" />
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         ))}
-      </motion.div>
-
-      <div className="pProgress">
-        <svg width="100%" height="100%" viewBox="0 0 160 160">
-          <circle cx="80" cy="80" r="70" fill="none" stroke="#ddd" strokeWidth={20} />
-          <motion.circle
-            cx="80"
-            cy="80"
-            r="70"
-            fill="none"
-            stroke="#7091e6"
-            strokeWidth={20}
-            style={{ pathLength: scrollYProgress }}
-            transform="rotate(-90 80 80)"
-          />
-        </svg>
       </div>
-    </div>
+    </section>
   );
 };
 

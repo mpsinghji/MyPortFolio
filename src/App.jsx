@@ -22,32 +22,32 @@ const App = () => {
             <Hero />
           </section>
         </LazyLoad>
-      {/* </Suspense> */}
-      {/* <Suspense fallback={<LoadingSpinner />}> */}
+      </Suspense>
+      <Suspense fallback={<LoadingSpinner />}>
         <LazyLoad height="100vh" offset={-100}>
           <section id="about">
             <About />
           </section>
         </LazyLoad>
-      {/* </Suspense> */}
-      {/* <Suspense fallback={<LoadingSpinner />}> */}
+      </Suspense>
+      <Suspense fallback={<LoadingSpinner />}>
         <LazyLoad height="100vh" offset={-100}>
           <section id="skills">
             <Skills />
           </section>
         </LazyLoad>
-      {/* </Suspense> */}
-      {/* <Suspense fallback={<LoadingSpinner />}> */}
+      </Suspense>
+      <Suspense fallback={<LoadingSpinner />}>
         <LazyLoad height="100vh" offset={-100}>
           <Portfolio />
         </LazyLoad>
-      {/* </Suspense> */}
-      {/* <Suspense fallback={<LoadingSpinner />}> */}
-        {/* <LazyLoad height="100vh" offset={-100}> */}
+      </Suspense>
+      <Suspense fallback={<LoadingSpinner />}>
+        <LazyLoad height="100vh" offset={-100}>
           <section id="contact">
             <Contact />
           </section>
-        {/* </LazyLoad> */}
+        </LazyLoad>
       </Suspense>
     </div>
   );
