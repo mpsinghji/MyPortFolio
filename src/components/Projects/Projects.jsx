@@ -6,9 +6,9 @@ import "./Projects.css";
 const items = [
   { id: 1, img: "/BlogVerse.png", title: "Full Stack Blog App", link: "/" },
   { id: 2, img: "/PROJECT_ZERO.png", title: "College Management System", link: "/" },
-  { id: 3, img: "/RealChat.png", title: "Real-time Chat App", link: "/" },
-  { id: 4, img: "/SocialMedia.png", title: "Social Media Project", link: "/" },
-  { id: 5, img: "/Portfolio.png", title: "Animated Portfolio", link: "/" },
+  { id: 3, img: "/Portfolio.png", title: "Animated Portfolio", link: "/" },
+  { id: 4, img: "/RealChat.png", title: "Real-time Chat App", link: "/" },
+  { id: 5, img: "/SocialMedia.png", title: "Social Media Project", link: "/" },
   { id: 6, img: "/JobPortal.png", title: "Job Portal Website", link: "/" },
 ];
 
