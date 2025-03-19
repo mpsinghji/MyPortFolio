@@ -18,7 +18,7 @@ const About = () => {
         transition={{ duration: 0.5 }}
         className="absolute top-5 right-5"
       >
-        <a href="/UpdatedResume.pdf" download>
+        <a href="/Resume.pdf" download>
           <GradientText
             colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
             animationSpeed={3}
