@@ -47,7 +47,7 @@ const Contact = () => {
       <div className="absolute inset-0 -z-10">
         <Ballpit
           count={150}
-          gravity={2}
+          gravity={1}
           friction={0.8}
           wallBounce={0}
           followCursor={true}
