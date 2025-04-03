@@ -98,12 +98,12 @@ const Projects = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  <a href={item.link} className="view-project-btn">
+                  {/* <a href={item.link} className="view-project-btn">
                     View Project
-                  </a>
-                  <a href={item.link} className="project-link">
+                  </a> */}
+                  {/* <a href={item.link} className="project-link">
                     Learn More →
-                  </a>
+                  </a> */}
                 </motion.div>
               </div>
               <motion.div 
