@@ -4,7 +4,7 @@ import Particles from "./Particles";
 import "./Projects.css";
 
 const items = [
-  { id: 1, img: "/BlogVerse.png", title: "Full Stack Blog App", link: "/" },
+  { id: 1, img: "/BlogVerse.png", title: "Full Stack Blog App", link: "https://mpji-blogverse.vercel.app" },
   { id: 2, img: "/PROJECT_ZERO.png", title: "College Management System", link: "https://mpji-campus-sync.vercel.app/" },
   { id: 3, img: "/Portfolio.png", title: "Animated Portfolio", link: "/" },
   // { id: 4, img: "/RealChat.png", title: "Real-time Chat App", link: "/" },
@@ -98,12 +98,9 @@ const Projects = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  {/* <a href={item.link} className="view-project-btn">
+                  <a href={item.link} className="view-project-btn">
                     View Project
-                  </a> */}
-                  {/* <a href={item.link} className="project-link">
-                    Learn More →
-                  </a> */}
+                  </a>
                 </motion.div>
               </div>
               <motion.div 

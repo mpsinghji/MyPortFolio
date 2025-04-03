@@ -5,7 +5,7 @@ import Hyperspeed from "./Hyperspeed";
 
 const skills = [
   { name: "ReactJS", icon: <FaReact /> },
-  { name: "NextJS", icon: <SiNextdotjs /> },
+  // { name: "NextJS", icon: <SiNextdotjs /> },
   { name: "NodeJS", icon: <FaNodeJs /> },
   { name: "ExpressJS", icon: <SiExpress /> },
   { name: "MongoDB", icon: <SiMongodb /> },

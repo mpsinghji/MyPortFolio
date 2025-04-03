@@ -42,7 +42,7 @@ const About = () => {
           <DecryptedText
             text="I am currently pursuing a Bachelor of Engineering at Chitkara University . My interest in technology and problem-solving drives me to explore innovative web solutions and stay updated with emerging trends."
             speed={200}
-            maxIterations={5}
+            maxIterations={2}
             animateOn="view"
             revealDirection="center"
           />
@@ -64,7 +64,7 @@ Looking ahead, I aim to further my expertise as a Full Stack Developer, contribu
             animateOn="view"
             revealDirection="center"
             speed={150}
-            maxIterations={10}
+            maxIterations={4}
           />
         </p>
       </motion.div>
