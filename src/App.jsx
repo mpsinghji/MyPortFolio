@@ -1,11 +1,9 @@
-import { lazy, Suspense } from "react";
-import LazyLoad from "react-lazyload";
-
-const Hero = lazy(() => import("./components/hero/Hero"));
-const Skills = lazy(() => import("./components/skills/Skills"));
-const Portfolio = lazy(() => import("./components/Projects/Projects"));
-const Contact = lazy(() => import("./components/contact/Contact"));
-const About = lazy(() => import("./components/about/About"));
+import { Suspense } from "react";
+import Hero from "./components/hero/Hero";
+import Skills from "./components/skills/Skills";
+import Portfolio from "./components/Projects/Projects";
+import Contact from "./components/contact/Contact";
+import About from "./components/about/About";
 
 const LoadingSpinner = () => (
   <div className="flex justify-center items-center h-screen">
@@ -17,37 +15,27 @@ const App = () => {
   return (
     <div className="container mx-auto px-4 ">
       <Suspense fallback={<LoadingSpinner />}>
-        {/* <LazyLoad height="100vh" offset={-100}> */}
-          <section id="home">
-            <Hero />
-          </section>
-        {/* </LazyLoad> */}
+        <section id="home">
+          <Hero />
+        </section>
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
-        {/* <LazyLoad height="100vh" offset={-100}> */}
-          <section id="about">
-            <About />
-          </section>
-        {/* </LazyLoad> */}
+        <section id="about">
+          <About />
+        </section>
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
-        {/* <LazyLoad height="100vh" offset={-100}> */}
-          <section id="skills">
-            <Skills />
-          </section>
-        {/* </LazyLoad> */}
+        <section id="skills">
+          <Skills />
+        </section>
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
-        {/* <LazyLoad height="100vh" offset={-100}> */}
-          <Portfolio />
-        {/* </LazyLoad> */}
+        <Portfolio />
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
-        {/* <LazyLoad height="100vh" offset={-100}> */}
-          <section id="contact">
-            <Contact />
-          </section>
-        {/* </LazyLoad> */}
+        <section id="contact">
+          <Contact />
+        </section>
       </Suspense>
     </div>
   );
