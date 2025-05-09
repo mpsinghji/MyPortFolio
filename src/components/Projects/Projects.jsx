@@ -6,10 +6,10 @@ import "./Projects.css";
 const items = [
   { id: 1, img: "/BlogVerse.png", title: "Full Stack Blog App", link: "https://mpji-blogverse.vercel.app" },
   { id: 2, img: "/PROJECT_ZERO.png", title: "College Management System", link: "https://mpji-campus-sync.vercel.app/" },
-  { id: 3, img: "/Portfolio.png", title: "Animated Portfolio", link: "/" },
+  // { id: 3, img: "/Portfolio.png", title: "Animated Portfolio", link: "/" },
   // { id: 4, img: "/RealChat.png", title: "Real-time Chat App", link: "/" },
-  // { id: 5, img: "/SocialMedia.png", title: "Social Media Project", link: "/" },
-  { id: 4, img: "/JobPortal.png", title: "Job Portal Website", link: "/" },
+  { id: 3, img: "/JobPortal.png", title: "Job Portal Website", link: "https://mpji-jobhunt.vercel.app/" },
+  { id: 4, img: "/SocialMedia.png", title: "Social Media Project", link: "/" },
 ];
 
 const Projects = () => {

@@ -17,37 +17,37 @@ const App = () => {
   return (
     <div className="container mx-auto px-4 ">
       <Suspense fallback={<LoadingSpinner />}>
-        <LazyLoad height="100vh" offset={-100}>
+        {/* <LazyLoad height="100vh" offset={-100}> */}
           <section id="home">
             <Hero />
           </section>
-        </LazyLoad>
+        {/* </LazyLoad> */}
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
-        <LazyLoad height="100vh" offset={-100}>
+        {/* <LazyLoad height="100vh" offset={-100}> */}
           <section id="about">
             <About />
           </section>
-        </LazyLoad>
+        {/* </LazyLoad> */}
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
-        <LazyLoad height="100vh" offset={-100}>
+        {/* <LazyLoad height="100vh" offset={-100}> */}
           <section id="skills">
             <Skills />
           </section>
-        </LazyLoad>
+        {/* </LazyLoad> */}
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
-        <LazyLoad height="100vh" offset={-100}>
+        {/* <LazyLoad height="100vh" offset={-100}> */}
           <Portfolio />
-        </LazyLoad>
+        {/* </LazyLoad> */}
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
-        <LazyLoad height="100vh" offset={-100}>
+        {/* <LazyLoad height="100vh" offset={-100}> */}
           <section id="contact">
             <Contact />
           </section>
-        </LazyLoad>
+        {/* </LazyLoad> */}
       </Suspense>
     </div>
   );
