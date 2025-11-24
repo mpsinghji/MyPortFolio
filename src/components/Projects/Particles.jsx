@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Renderer, Camera, Geometry, Program, Mesh } from "ogl";
 
 const defaultColors = ["#ffffff", "#ffffff", "#ffffff"];
@@ -74,7 +74,7 @@ const fragment = /* glsl */ `
   }
 `;
 
-const Particles = ({
+const Particles = React.memo(({
   particleCount = 200,
   particleSpread = 10,
   speed = 0.1,
@@ -95,7 +95,7 @@ const Particles = ({
     const container = containerRef.current;
     if (!container) return;
 
-    const renderer = new Renderer({ depth: false, alpha: true });
+    const renderer = new Renderer({ depth: false, alpha: true, dpr: Math.min(window.devicePixelRatio, 2) });
     const gl = renderer.gl;
     container.appendChild(gl.canvas);
     gl.clearColor(0, 0, 0, 0);
@@ -227,6 +227,6 @@ const Particles = ({
       className={`relative w-full h-full ${className}`}
     />
   );
-};
+});
 
 export default Particles;

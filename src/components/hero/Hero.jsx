@@ -131,11 +131,11 @@ const Hero = () => {
           </Suspense>
         </Canvas>
       </div>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1/2 md:h-4/5 z-20">
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-20 flex items-end justify-center pointer-events-none">
         <img
           src="/man.png"
           alt="Manpreet Singh"
-          className="h-full w-auto object-contain"
+          className="h-[60vh] w-auto object-contain"
         />
       </div>
     </div>

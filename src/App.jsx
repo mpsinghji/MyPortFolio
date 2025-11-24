@@ -1,9 +1,9 @@
-import { Suspense } from "react";
-import Hero from "./components/hero/Hero";
-import Skills from "./components/skills/Skills";
-import Portfolio from "./components/Projects/Projects";
-import Contact from "./components/contact/Contact";
-import About from "./components/about/About";
+import { Suspense, lazy } from "react";
+const Hero = lazy(() => import("./components/hero/Hero"));
+const Skills = lazy(() => import("./components/skills/Skills"));
+const Portfolio = lazy(() => import("./components/Projects/Projects"));
+const Contact = lazy(() => import("./components/contact/Contact"));
+const About = lazy(() => import("./components/about/About"));
 
 const LoadingSpinner = () => (
   <div className="flex justify-center items-center h-screen">
@@ -11,9 +11,13 @@ const LoadingSpinner = () => (
   </div>
 );
 
+import useOnePageScroll from "./hooks/useOnePageScroll";
+
 const App = () => {
+  useOnePageScroll();
+
   return (
-    <div className="container mx-auto px-4 ">
+    <div className="relative w-full overflow-hidden">
       <Suspense fallback={<LoadingSpinner />}>
         <section id="home">
           <Hero />

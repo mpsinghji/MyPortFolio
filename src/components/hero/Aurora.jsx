@@ -1,5 +1,5 @@
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 const VERT = `#version 300 es
 in vec2 position;
@@ -109,7 +109,7 @@ void main() {
 }
 `;
 
-export default function Aurora(props) {
+const Aurora = React.memo(function Aurora(props) {
   const {
     colorStops = ["#00d8ff", "#7cff67", "#00d8ff"],
     amplitude = 1.0,
@@ -127,7 +127,8 @@ export default function Aurora(props) {
     const renderer = new Renderer({
       alpha: true,
       premultipliedAlpha: true,
-      antialias: true
+      antialias: true,
+      dpr: Math.min(window.devicePixelRatio, 2)
     });
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 0);
@@ -203,4 +204,6 @@ export default function Aurora(props) {
   }, [amplitude]);
 
   return <div ref={ctnDom} className="w-full h-full" />;
-}
+});
+
+export default Aurora;

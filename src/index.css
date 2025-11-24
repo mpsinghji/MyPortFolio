@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 html {
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-x: hidden;
   scrollbar-width: thin;
@@ -12,6 +11,7 @@ html {
 body {
   @apply bg-black min-h-screen w-full m-0 p-0;
   overscroll-behavior: none;
+  overflow: hidden;
 }
 
 a {

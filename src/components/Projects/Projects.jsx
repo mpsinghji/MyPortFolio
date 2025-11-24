@@ -20,7 +20,7 @@ const Projects = () => {
   });
 
   return (
-    <section className="projects" ref={containerRef}>
+    <div className="projects-wrapper" ref={containerRef}>
       <div className="background-particles">
         <Particles
           particleCount={150}
@@ -66,18 +66,18 @@ const Projects = () => {
 
       <div className="projects-container">
         {items.map((item, index) => (
-          <div className="project-section" key={item.id}>
+          <section className="project-section h-screen w-full flex items-center justify-center snap-start relative overflow-hidden" key={item.id}>
             <motion.div
               className="project-content"
               initial={{ opacity: 0 }}
-              whileInView={{ 
+              whileInView={{
                 opacity: 1,
                 transition: { duration: 0.8 }
               }}
               viewport={{ once: true, margin: "-20%" }}
             >
               <div className="project-text">
-                <motion.span 
+                <motion.span
                   className="project-number"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +103,7 @@ const Projects = () => {
                   </a>
                 </motion.div>
               </div>
-              <motion.div 
+              <motion.div
                 className="project-image-container"
                 initial={{ opacity: 0, x: 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -114,10 +114,10 @@ const Projects = () => {
                 </div>
               </motion.div>
             </motion.div>
-          </div>
+          </section>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 
