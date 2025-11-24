@@ -14,10 +14,18 @@ const items = [
 
 const Projects = () => {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
+
+  // Track scroll progress for the content (active item highlighting)
+  /* const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
-  });
+  }); */
+
+  // Track scroll progress for visibility (fade in/out at section boundaries)
+  /* const { scrollYProgress: visibilityProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  }); */
 
   return (
     <div className="projects-wrapper" ref={containerRef}>
@@ -36,7 +44,16 @@ const Projects = () => {
         />
       </div>
 
-      <motion.div className="progress-container">
+      {/* <motion.div
+        className="progress-container"
+        style={{
+          opacity: useTransform(
+            visibilityProgress,
+            [0.1, 0.2, 0.8, 0.9],
+            [0, 1, 1, 0]
+          )
+        }}
+      >
         <div className="progress-numbers">
           {items.map((_, index) => (
             <motion.div
@@ -47,6 +64,11 @@ const Projects = () => {
                   scrollYProgress,
                   [index / items.length, (index + 1) / items.length],
                   ["#666", "#fff"]
+                ),
+                scale: useTransform(
+                  scrollYProgress,
+                  [index / items.length, (index + 1) / items.length],
+                  [1, 1.2]
                 )
               }}
             >
@@ -62,7 +84,7 @@ const Projects = () => {
             }}
           />
         </div>
-      </motion.div>
+      </motion.div> */}
 
       <div className="projects-container">
         {items.map((item, index) => (
